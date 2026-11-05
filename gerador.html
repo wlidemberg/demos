@@ -17,12 +17,12 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-1">Nome da Empresa</label>
-          <input type="text" name="empresa" required placeholder="Ex: Clínica Vida"
+          <input type="text" name="empresa" required placeholder="Ex: Vetclin"
             class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm focus:border-[#CCFF00] outline-none">
         </div>
         <div>
           <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-1">Slug da URL (Pasta)</label>
-          <input type="text" name="slug" required placeholder="Ex: clinica-vida"
+          <input type="text" name="slug" required placeholder="Ex: clinica-veterinaria"
             class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm focus:border-[#CCFF00] outline-none">
         </div>
       </div>
@@ -30,34 +30,32 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-1">Nicho de Atuação</label>
-          <input type="text" name="nicho" required placeholder="Ex: Estética Avançada"
+          <input type="text" name="nicho" required placeholder="Ex: Clínica Veterinária"
             class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm focus:border-[#CCFF00] outline-none">
         </div>
         <div>
           <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-1">WhatsApp (Com DDI e DDD)</label>
-          <input type="text" name="whatsapp" required placeholder="5521999999999"
+          <input type="text" name="whatsapp" required placeholder="5521968045339"
             class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm focus:border-[#CCFF00] outline-none">
         </div>
       </div>
 
       <div>
         <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-1">Público-Alvo e Principais Dores</label>
-        <textarea name="dores" rows="2" required
-          placeholder="Mulheres de 30 a 50 anos que buscam rejuvenescimento sem cirurgia..."
+        <textarea name="dores" rows="2" required placeholder="Tutores de cães e gatos que buscam atendimento rápido..."
           class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm focus:border-[#CCFF00] outline-none"></textarea>
       </div>
 
       <div>
         <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-1">Oferta Principal e Diferenciais</label>
         <textarea name="oferta" rows="2" required
-          placeholder="Avaliação gratuita no primeiro atendimento, equipamentos de ponta..."
+          placeholder="Atendimento 24h, exames no local e parcelamento facilitado..."
           class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm focus:border-[#CCFF00] outline-none"></textarea>
       </div>
 
       <div>
         <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-1">Estilo Visual e Paleta de Cores</label>
-        <input type="text" name="cores" required
-          placeholder="Ex: Dark mode sofisticado com dourado, ou Clean branco com verde esmeralda"
+        <input type="text" name="cores" required placeholder="Ex: Rosa e amarelo moderno"
           class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm focus:border-[#CCFF00] outline-none">
       </div>
 
@@ -85,15 +83,15 @@
       statusBox.classList.add('hidden');
 
       try {
+        // Enviar sem header application/json evita o bloqueio de preflight CORS no navegador
         const res = await fetch(WEBHOOK_URL, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData)
         });
 
-        if (!res.ok) throw new Error('Falha na comunicação com o n8n');
+        if (!res.ok) throw new Error(`Status HTTP: ${res.status}`);
 
-        const cleanSlug = formData.slug.toLowerCase().replace(/[^a-z0-9-]+/g, '-');
+        const cleanSlug = formData.slug.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9-]+/g, '-').replace(/^-|-$/g, '');
         const finalUrl = `${GITHUB_PAGES_BASE}/${cleanSlug}/?v=${Date.now()}`;
 
         statusBox.classList.remove('hidden');
@@ -104,7 +102,7 @@
         `;
       } catch (err) {
         statusBox.classList.remove('hidden');
-        statusBox.innerHTML = `<p class="text-red-400 font-semibold">❌ Erro: ${err.message}</p>`;
+        statusBox.innerHTML = `<p class="text-red-400 font-semibold">❌ Erro: ${err.message} (Verifique se o n8n está aguardando o evento de teste)</p>`;
       } finally {
         btn.disabled = false;
         btn.innerText = "Gerar e Publicar Landing Page";
