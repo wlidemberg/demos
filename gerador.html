@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de Landing Pages IA</title>
+  <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
+</head>
+
+<body class="bg-[#050505] text-white min-h-screen flex items-center justify-center p-6">
+  <div class="bg-[#1A1A1A] border border-zinc-800 rounded-2xl max-w-xl w-full p-8 shadow-2xl">
+    <h1 class="text-2xl font-bold text-[#CCFF00] mb-2">Gerador Automático de LP</h1>
+    <p class="text-zinc-400 text-sm mb-6">Preencha o briefing para gerar e publicar a demonstração no GitHub Pages.</p>
+
+    <form id="lpForm" class="space-y-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-1">Nome da Empresa</label>
+          <input type="text" name="empresa" required placeholder="Ex: Clínica Vida"
+            class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm focus:border-[#CCFF00] outline-none">
+        </div>
+        <div>
+          <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-1">Slug da URL (Pasta)</label>
+          <input type="text" name="slug" required placeholder="Ex: clinica-vida"
+            class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm focus:border-[#CCFF00] outline-none">
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-1">Nicho de Atuação</label>
+          <input type="text" name="nicho" required placeholder="Ex: Estética Avançada"
+            class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm focus:border-[#CCFF00] outline-none">
+        </div>
+        <div>
+          <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-1">WhatsApp (Com DDI e DDD)</label>
+          <input type="text" name="whatsapp" required placeholder="5521999999999"
+            class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm focus:border-[#CCFF00] outline-none">
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-1">Público-Alvo e Principais Dores</label>
+        <textarea name="dores" rows="2" required
+          placeholder="Mulheres de 30 a 50 anos que buscam rejuvenescimento sem cirurgia..."
+          class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm focus:border-[#CCFF00] outline-none"></textarea>
+      </div>
+
+      <div>
+        <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-1">Oferta Principal e Diferenciais</label>
+        <textarea name="oferta" rows="2" required
+          placeholder="Avaliação gratuita no primeiro atendimento, equipamentos de ponta..."
+          class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm focus:border-[#CCFF00] outline-none"></textarea>
+      </div>
+
+      <div>
+        <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-1">Estilo Visual e Paleta de Cores</label>
+        <input type="text" name="cores" required
+          placeholder="Ex: Dark mode sofisticado com dourado, ou Clean branco com verde esmeralda"
+          class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm focus:border-[#CCFF00] outline-none">
+      </div>
+
+      <button type="submit" id="submitBtn"
+        class="w-full bg-[#CCFF00] text-black font-bold py-3 rounded-lg hover:bg-lime-400 transition cursor-pointer">
+        Gerar e Publicar Landing Page
+      </button>
+    </form>
+
+    <div id="statusBox" class="hidden mt-6 p-4 rounded-lg bg-zinc-900 border border-zinc-700 text-sm"></div>
+  </div>
+
+  <script>
+    const WEBHOOK_URL = "https://n8n.automationtest.com.br/webhook-test/gerar-lp";
+    const GITHUB_PAGES_BASE = "https://wlidemberg.github.io/demos";
+
+    document.getElementById('lpForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('submitBtn');
+      const statusBox = document.getElementById('statusBox');
+      const formData = Object.fromEntries(new FormData(e.target).entries());
+
+      btn.disabled = true;
+      btn.innerText = "Gerando código com IA e publicando (~25s)...";
+      statusBox.classList.add('hidden');
+
+      try {
+        const res = await fetch(WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData)
+        });
+
+        if (!res.ok) throw new Error('Falha na comunicação com o n8n');
+
+        const cleanSlug = formData.slug.toLowerCase().replace(/[^a-z0-9-]+/g, '-');
+        const finalUrl = `${GITHUB_PAGES_BASE}/${cleanSlug}/?v=${Date.now()}`;
+
+        statusBox.classList.remove('hidden');
+        statusBox.innerHTML = `
+          <p class="text-[#CCFF00] font-semibold mb-1">✅ Página enviada para o GitHub!</p>
+          <p class="text-zinc-400 text-xs mb-2">O GitHub Pages leva cerca de 30 a 45 segundos para atualizar o link:</p>
+          <a href="${finalUrl}" target="_blank" class="text-white underline break-all font-mono text-xs">${finalUrl}</a>
+        `;
+      } catch (err) {
+        statusBox.classList.remove('hidden');
+        statusBox.innerHTML = `<p class="text-red-400 font-semibold">❌ Erro: ${err.message}</p>`;
+      } finally {
+        btn.disabled = false;
+        btn.innerText = "Gerar e Publicar Landing Page";
+      }
+    });
+  </script>
+</body>
+
+</html>
