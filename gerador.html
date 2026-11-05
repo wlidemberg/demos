@@ -4,110 +4,293 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gerador de Landing Pages IA</title>
+  <title>Painel Gerador de Landing Pages IA</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body class="bg-[#050505] text-white min-h-screen flex items-center justify-center p-6">
-  <div class="bg-[#1A1A1A] border border-zinc-800 rounded-2xl max-w-xl w-full p-8 shadow-2xl">
-    <h1 class="text-2xl font-bold text-[#CCFF00] mb-2">Gerador Automático de LP</h1>
-    <p class="text-zinc-400 text-sm mb-6">Preencha o briefing para gerar e publicar a demonstração no GitHub Pages.</p>
-
-    <form id="lpForm" class="space-y-4">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-1">Nome da Empresa</label>
-          <input type="text" name="empresa" required placeholder="Ex: Vetclin"
-            class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm focus:border-[#CCFF00] outline-none">
-        </div>
-        <div>
-          <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-1">Slug da URL (Pasta)</label>
-          <input type="text" name="slug" required placeholder="Ex: clinica-veterinaria"
-            class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm focus:border-[#CCFF00] outline-none">
-        </div>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-1">Nicho de Atuação</label>
-          <input type="text" name="nicho" required placeholder="Ex: Clínica Veterinária"
-            class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm focus:border-[#CCFF00] outline-none">
-        </div>
-        <div>
-          <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-1">WhatsApp (Com DDI e DDD)</label>
-          <input type="text" name="whatsapp" required placeholder="5521968045339"
-            class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm focus:border-[#CCFF00] outline-none">
-        </div>
-      </div>
-
+<body class="bg-[#050505] text-white min-h-screen p-6">
+  <div class="max-w-6xl mx-auto">
+    <!-- Header -->
+    <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 pb-4 border-b border-zinc-800 gap-4">
       <div>
-        <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-1">Público-Alvo e Principais Dores</label>
-        <textarea name="dores" rows="2" required placeholder="Tutores de cães e gatos que buscam atendimento rápido..."
-          class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm focus:border-[#CCFF00] outline-none"></textarea>
+        <h1 class="text-2xl font-bold text-[#CCFF00]">Automation Test — Studio LP</h1>
+        <p class="text-zinc-400 text-sm">Crie, edite seções com IA e gerencie demonstrações no GitHub Pages.</p>
       </div>
-
-      <div>
-        <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-1">Oferta Principal e Diferenciais</label>
-        <textarea name="oferta" rows="2" required
-          placeholder="Atendimento 24h, exames no local e parcelamento facilitado..."
-          class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm focus:border-[#CCFF00] outline-none"></textarea>
-      </div>
-
-      <div>
-        <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-1">Estilo Visual e Paleta de Cores</label>
-        <input type="text" name="cores" required placeholder="Ex: Rosa e amarelo moderno"
-          class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm focus:border-[#CCFF00] outline-none">
-      </div>
-
-      <button type="submit" id="submitBtn"
-        class="w-full bg-[#CCFF00] text-black font-bold py-3 rounded-lg hover:bg-lime-400 transition cursor-pointer">
-        Gerar e Publicar Landing Page
+      <button onclick="carregarProjetos()"
+        class="bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 text-xs px-4 py-2.5 rounded-lg flex items-center gap-2 self-start">
+        <i class="fa-solid fa-rotate"></i> Atualizar Lista
       </button>
-    </form>
+    </div>
 
-    <div id="statusBox" class="hidden mt-6 p-4 rounded-lg bg-zinc-900 border border-zinc-700 text-sm"></div>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <!-- Coluna Esquerda: Criar Nova LP -->
+      <div class="lg:col-span-7 bg-[#1A1A1A] border border-zinc-800 rounded-2xl p-6 shadow-2xl">
+        <h2 class="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+          <i class="fa-solid fa-wand-magic-sparkles text-[#CCFF00]"></i> Nova Landing Page
+        </h2>
+
+        <form id="lpForm" class="space-y-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-1">Nome da Empresa</label>
+              <input type="text" name="empresa" id="empresaInput" required placeholder="Ex: Clínica Vida"
+                class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm focus:border-[#CCFF00] outline-none">
+            </div>
+            <div>
+              <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-1">Slug da URL (Pasta)</label>
+              <input type="text" name="slug" id="slugInput" required placeholder="Ex: clinica-vida"
+                class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm focus:border-[#CCFF00] outline-none">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-1">Nicho de Atuação</label>
+              <input type="text" name="nicho" required placeholder="Ex: Clínica Veterinária"
+                class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm focus:border-[#CCFF00] outline-none">
+            </div>
+            <div>
+              <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-1">WhatsApp</label>
+              <input type="text" name="whatsapp" required placeholder="5521968045339"
+                class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm focus:border-[#CCFF00] outline-none">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-1">Público-Alvo e Principais
+              Dores</label>
+            <textarea name="dores" rows="2" required
+              placeholder="Tutores de cães e gatos que buscam atendimento rápido..."
+              class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm focus:border-[#CCFF00] outline-none"></textarea>
+          </div>
+
+          <div>
+            <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-1">Oferta Principal e
+              Diferenciais</label>
+            <textarea name="oferta" rows="2" required
+              placeholder="Atendimento 24h, exames no local e parcelamento facilitado..."
+              class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm focus:border-[#CCFF00] outline-none"></textarea>
+          </div>
+
+          <div>
+            <label class="block text-xs uppercase tracking-wider text-zinc-400 mb-1">Estilo Visual e Paleta de
+              Cores</label>
+            <input type="text" name="cores" required
+              placeholder="Ex: Dark mode sofisticado com verde neon, ou Branco clean com azul"
+              class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2.5 text-sm focus:border-[#CCFF00] outline-none">
+          </div>
+
+          <button type="submit" id="submitBtn"
+            class="w-full bg-[#CCFF00] text-black font-bold py-3 rounded-lg hover:bg-lime-400 transition cursor-pointer">
+            Gerar e Publicar Landing Page
+          </button>
+        </form>
+
+        <div id="statusBox" class="hidden mt-5 p-4 rounded-lg bg-zinc-900 border border-zinc-700 text-sm"></div>
+      </div>
+
+      <!-- Coluna Direita: Lista de Projetos no GitHub -->
+      <div class="lg:col-span-5 bg-[#1A1A1A] border border-zinc-800 rounded-2xl p-6 shadow-2xl flex flex-col">
+        <h2 class="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+          <i class="fa-solid fa-folder-open text-[#CCFF00]"></i> Projetos Publicados
+        </h2>
+        <div id="projectList" class="space-y-3 flex-1 overflow-y-auto max-h-[520px] pr-1">
+          <p class="text-zinc-500 text-sm">Carregando projetos do GitHub...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Edição com IA -->
+  <div id="editModal" class="fixed inset-0 bg-black/80 hidden items-center justify-center p-4 z-50">
+    <div class="bg-[#1A1A1A] border border-zinc-700 rounded-2xl max-w-lg w-full p-6 shadow-2xl">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-lg font-bold text-[#CCFF00]">Editar Página: <span id="modalSlugTitle"
+            class="text-white font-mono"></span></h3>
+        <button onclick="fecharModal()" class="text-zinc-400 hover:text-white"><i
+            class="fa-solid fa-xmark text-lg"></i></button>
+      </div>
+      <p class="text-xs text-zinc-400 mb-3">Descreva o que deseja adicionar, alterar ou remover. A IA lerá o código
+        atual desta página no GitHub e aplicará as mudanças.</p>
+      <textarea id="editInstructions" rows="4"
+        placeholder="Ex: Adicione uma seção de planos com 3 preços antes do FAQ, mude a cor dos botões para verde esmeralda e remova o último depoimento."
+        class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-3 text-sm focus:border-[#CCFF00] outline-none mb-4"></textarea>
+      <div class="flex justify-end gap-3">
+        <button onclick="fecharModal()"
+          class="px-4 py-2 rounded-lg bg-zinc-800 text-zinc-300 text-sm hover:bg-zinc-700">Cancelar</button>
+        <button onclick="confirmarEdicao()" id="confirmEditBtn"
+          class="px-5 py-2 rounded-lg bg-[#CCFF00] text-black font-bold text-sm hover:bg-lime-400">Aplicar Alterações
+          com IA</button>
+      </div>
+    </div>
   </div>
 
   <script>
+    // Dica: Quando ativar a chave "Publish/Active" no n8n, troque "webhook-test" por "webhook"
     const WEBHOOK_URL = "https://n8n.automationtest.com.br/webhook-test/gerar-lp";
-    const GITHUB_PAGES_BASE = "https://wlidemberg.github.io/demos";
+    const GITHUB_OWNER = "wlidemberg";
+    const GITHUB_REPO = "demos";
+    const GITHUB_PAGES_BASE = `https://${GITHUB_OWNER}.github.io/${GITHUB_REPO}`;
 
+    let slugEmEdicao = "";
+
+    // Preenche o slug automaticamente ao digitar o nome da empresa
+    document.getElementById('empresaInput').addEventListener('input', (e) => {
+      const slugField = document.getElementById('slugInput');
+      slugField.value = e.target.value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9-]+/g, '-').replace(/^-|-$/g, '');
+    });
+
+    // Lista todas as pastas de clientes direto da API do GitHub
+    async function carregarProjetos() {
+      const listEl = document.getElementById('projectList');
+      listEl.innerHTML = `<p class="text-zinc-400 text-xs"><i class="fa-solid fa-spinner fa-spin mr-2"></i>Buscando pastas no repositório...</p>`;
+      try {
+        const res = await fetch(`https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents?t=${Date.now()}`);
+        const items = await res.json();
+        const dirs = Array.isArray(items) ? items.filter(i => i.type === 'dir') : [];
+
+        if (dirs.length === 0) {
+          listEl.innerHTML = `<p class="text-zinc-500 text-sm">Nenhum projeto criado ainda.</p>`;
+          return;
+        }
+
+        listEl.innerHTML = dirs.map(dir => `
+          <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-3.5 flex items-center justify-between gap-2 hover:border-zinc-700 transition">
+            <div class="truncate">
+              <p class="font-semibold text-sm text-white truncate">${dir.name}</p>
+              <a href="${GITHUB_PAGES_BASE}/${dir.name}/?v=${Date.now()}" target="_blank" class="text-xs text-[#CCFF00] hover:underline flex items-center gap-1 mt-0.5">
+                Abrir página <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </a>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button onclick="abrirModalEdicao('${dir.name}')" title="Editar com IA" class="bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-xs px-3 py-2 rounded-lg flex items-center gap-1.5 cursor-pointer">
+                <i class="fa-solid fa-pen-to-square text-[#CCFF00]"></i> Editar
+              </button>
+              <button onclick="excluirProjeto('${dir.name}')" title="Excluir Projeto" class="bg-red-950/50 hover:bg-red-900/70 border border-red-900/50 text-red-300 text-xs px-2.5 py-2 rounded-lg cursor-pointer">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </div>
+          </div>
+        `).join('');
+      } catch (err) {
+        listEl.innerHTML = `<p class="text-red-400 text-xs">Erro ao carregar lista: ${err.message}</p>`;
+      }
+    }
+
+    // Criação de Nova LP
     document.getElementById('lpForm').addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = document.getElementById('submitBtn');
-      const statusBox = document.getElementById('statusBox');
       const formData = Object.fromEntries(new FormData(e.target).entries());
+      formData.action = 'create';
 
       btn.disabled = true;
-      btn.innerText = "Gerando código com IA e publicando (~25s)...";
-      statusBox.classList.add('hidden');
+      btn.innerText = "Gerando com IA e publicando (~20s)...";
+      mostrarStatus("⏳ Gerando código com IA e enviando ao GitHub...", "text-zinc-300");
 
       try {
-        // Enviar sem header application/json evita o bloqueio de preflight CORS no navegador
         const res = await fetch(WEBHOOK_URL, {
           method: 'POST',
           body: JSON.stringify(formData)
         });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
-        if (!res.ok) throw new Error(`Status HTTP: ${res.status}`);
-
-        const cleanSlug = formData.slug.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9-]+/g, '-').replace(/^-|-$/g, '');
-        const finalUrl = `${GITHUB_PAGES_BASE}/${cleanSlug}/?v=${Date.now()}`;
-
-        statusBox.classList.remove('hidden');
-        statusBox.innerHTML = `
-          <p class="text-[#CCFF00] font-semibold mb-1">✅ Página enviada para o GitHub!</p>
-          <p class="text-zinc-400 text-xs mb-2">O GitHub Pages leva cerca de 30 a 45 segundos para atualizar o link:</p>
+        const finalUrl = `${GITHUB_PAGES_BASE}/${formData.slug}/?v=${Date.now()}`;
+        mostrarStatus(`
+          <p class="text-[#CCFF00] font-semibold mb-1">✅ Página publicada com sucesso!</p>
           <a href="${finalUrl}" target="_blank" class="text-white underline break-all font-mono text-xs">${finalUrl}</a>
-        `;
+        `);
+        setTimeout(carregarProjetos, 1500);
       } catch (err) {
-        statusBox.classList.remove('hidden');
-        statusBox.innerHTML = `<p class="text-red-400 font-semibold">❌ Erro: ${err.message} (Verifique se o n8n está aguardando o evento de teste)</p>`;
+        mostrarStatus(`❌ Erro: ${err.message} (Verifique se o workflow está ativo ou em modo de escuta no n8n)`, "text-red-400");
       } finally {
         btn.disabled = false;
         btn.innerText = "Gerar e Publicar Landing Page";
       }
     });
+
+    // Funções do Modal de Edição
+    function abrirModalEdicao(slug) {
+      slugEmEdicao = slug;
+      document.getElementById('modalSlugTitle').innerText = slug;
+      document.getElementById('editInstructions').value = "";
+      const modal = document.getElementById('editModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function fecharModal() {
+      const modal = document.getElementById('editModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    async function confirmarEdicao() {
+      const instrucoes = document.getElementById('editInstructions').value.trim();
+      if (!instrucoes) return alert("Digite o que deseja alterar na página.");
+
+      const btn = document.getElementById('confirmEditBtn');
+      btn.disabled = true;
+      btn.innerText = "Editando com IA (~20s)...";
+
+      try {
+        const res = await fetch(WEBHOOK_URL, {
+          method: 'POST',
+          body: JSON.stringify({
+            action: 'edit',
+            slug: slugEmEdicao,
+            instrucoes
+          })
+        });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+        fecharModal();
+        const finalUrl = `${GITHUB_PAGES_BASE}/${slugEmEdicao}/?v=${Date.now()}`;
+        mostrarStatus(`
+          <p class="text-[#CCFF00] font-semibold mb-1">✅ Página "${slugEmEdicao}" atualizada com sucesso!</p>
+          <p class="text-zinc-400 text-xs mb-1">Aguarde ~30s para o cache do GitHub Pages atualizar:</p>
+          <a href="${finalUrl}" target="_blank" class="text-white underline break-all font-mono text-xs">${finalUrl}</a>
+        `);
+      } catch (err) {
+        alert("Erro ao editar: " + err.message);
+      } finally {
+        btn.disabled = false;
+        btn.innerText = "Aplicar Alterações com IA";
+      }
+    }
+
+    // Exclusão de Projeto
+    async function excluirProjeto(slug) {
+      if (!confirm(`Tem certeza que deseja excluir a página "${slug}" do GitHub?`)) return;
+
+      mostrarStatus(`⏳ Removendo "${slug}" do GitHub...`, "text-zinc-300");
+      try {
+        const res = await fetch(WEBHOOK_URL, {
+          method: 'POST',
+          body: JSON.stringify({
+            action: 'delete',
+            slug
+          })
+        });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+        mostrarStatus(`<p class="text-[#CCFF00] font-semibold">🗑️ Projeto "${slug}" excluído com sucesso!</p>`);
+        setTimeout(carregarProjetos, 1500);
+      } catch (err) {
+        mostrarStatus(`❌ Erro ao excluir: ${err.message}`, "text-red-400");
+      }
+    }
+
+    function mostrarStatus(html, extraClass = "") {
+      const box = document.getElementById('statusBox');
+      box.className = `mt-5 p-4 rounded-lg bg-zinc-900 border border-zinc-700 text-sm ${extraClass}`;
+      box.innerHTML = html;
+      box.classList.remove('hidden');
+    }
+
+    // Carrega a lista ao abrir a página
+    carregarProjetos();
   </script>
 </body>
 
