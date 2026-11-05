@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assescor | Contabilidade Imersiva e Planejamento de Faturamento</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#1E40AF',
+                            purple: '#6D28D9',
+                            dark: '#111827',
+                            gray: '#4B5563'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg { background: linear-gradient(135deg, #1E40AF 0%, #6D28D9 100%); }
+        .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+    </style>
+</head>
+<body class="font-sans text-brand-dark bg-gray-50">
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/5521981705558" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition-transform animate-bounce">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Header -->
+    <header class="fixed w-full z-40 glass border-b border-gray-200">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-purple">
+                ASSESCOR
+            </div>
+            <a href="https://wa.me/5521981705558" class="hidden md:block bg-brand-blue text-white px-6 py-2 rounded-full font-semibold hover:bg-brand-purple transition">Falar com Especialista</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 gradient-bg text-white">
+        <div class="container mx-auto px-6 text-center lg:text-left flex flex-col lg:flex-row items-center">
+            <div class="lg:w-1/2">
+                <h1 class="text-4xl lg:text-6xl font-extrabold leading-tight mb-6">
+                    Sua empresa não precisa de um guarda-livros, precisa de <span class="text-purple-300">Crescimento.</span>
+                </h1>
+                <p class="text-xl mb-8 text-blue-100">Contabilidade Imersiva: Projetos estratégicos de planejamento de faturamento e escala empresarial para quem busca o próximo nível.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="https://wa.me/5521981705558" class="bg-white text-brand-blue px-8 py-4 rounded-lg font-bold text-lg shadow-xl hover:bg-gray-100 transition flex items-center justify-center">
+                        SOLICITAR DIAGNÓSTICO <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="lg:w-1/2 mt-12 lg:mt-0 flex justify-center">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-purple-500/30 rounded-full blur-3xl"></div>
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=500" alt="Dashboard Financeiro" class="relative rounded-2xl shadow-2xl border-4 border-white/10 w-full max-w-md">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dores vs Solução -->
+    <section class="py-20 container mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                <h2 class="text-2xl font-bold mb-6 text-red-600">Sua empresa está estagnada?</h2>
+                <ul class="space-y-4">
+                    <li class="flex items-start"><i class="fas fa-times-circle mt-1 mr-3 text-red-500"></i> Faturamento travado e sem previsão de crescimento.</li>
+                    <li class="flex items-start"><i class="fas fa-times-circle mt-1 mr-3 text-red-500"></i> Impostos corroendo sua margem de lucro.</li>
+                    <li class="flex items-start"><i class="fas fa-times-circle mt-1 mr-3 text-red-500"></i> Falta de clareza nos números para tomar decisões.</li>
+                </ul>
+            </div>
+            <div class="bg-brand-blue p-8 rounded-2xl shadow-xl text-white">
+                <h2 class="text-2xl font-bold mb-6 text-blue-200">A Solução Assescor</h2>
+                <ul class="space-y-4">
+                    <li class="flex items-start"><i class="fas fa-check-circle mt-1 mr-3 text-green-400"></i> Planejamento tributário inteligente e legal.</li>
+                    <li class="flex items-start"><i class="fas fa-check-circle mt-1 mr-3 text-green-400"></i> Projetos de expansão baseados em dados reais.</li>
+                    <li class="flex items-start"><i class="fas fa-check-circle mt-1 mr-3 text-green-400"></i> Acompanhamento imersivo na gestão do seu negócio.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefícios -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-4">Por que escolher a Contabilidade Imersiva?</h2>
+                <div class="h-1 w-24 bg-brand-purple mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl text-center hover:shadow-lg transition">
+                    <div class="w-16 h-16 bg-blue-100 text-brand-blue rounded-full flex items-center justify-center mx-auto mb-6 text-2xl">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Foco em Faturamento</h3>
+                    <p class="text-brand-gray">Não apenas registramos o passado, projetamos o seu futuro financeiro com metas claras.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl text-center hover:shadow-lg transition">
+                    <div class="w-16 h-16 bg-purple-100 text-brand-purple rounded-full flex items-center justify-center mx-auto mb-6 text-2xl">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Análise Imersiva</h3>
+                    <p class="text-brand-gray">Entramos fundo no seu modelo de negócio para identificar gargalos e oportunidades ocunltas.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl text-center hover:shadow-lg transition">
+                    <div class="w-16 h-16 bg-gray-200 text-brand-dark rounded-full flex items-center justify-center mx-auto mb-6 text-2xl">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Segurança Total</h3>
+                    <p class="text-brand-gray">Conformidade absoluta com o fisco enquanto otimizamos cada centavo da sua carga tributária.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prova Social -->
+    <section class="py-20 container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-12">Quem confia na Assescor</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="p-6 border border-gray-200 rounded-lg italic text-brand-gray">
+                "O planejamento de faturamento da Assescor mudou nossa visão. Dobramos o tamanho da empresa em 1 ano."
+                <p class="mt-4 font-bold not-italic text-brand-dark">- Ricardo M., CEO Tech</p>
+            </div>
+            <div class="p-6 border border-gray-200 rounded-lg italic text-brand-gray">
+                "Finalmente entendo meus números. A contabilidade imersiva é o diferencial que faltava no meu varejo."
+                <p class="mt-4 font-bold not-italic text-brand-dark">- Ana Paula S., Lojista</p>
+            </div>
+            <div class="p-6 border border-gray-200 rounded-lg italic text-brand-gray">
+                "Atendimento impecável e estratégico. Deixaram de ser contadores para serem parceiros de negócio."
+                <p class="mt-4 font-bold not-italic text-brand-dark">- Marcos V., Industrial</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 bg-brand-dark text-white">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <h2 class="text-3xl font-bold text-center mb-12">Perguntas Frequentes</h2>
+            <div class="space-y-4">
+                <details class="group bg-gray-800 rounded-lg">
+                    <summary class="p-4 cursor-pointer font-semibold list-none flex justify-between items-center">
+                        O que é a Contabilidade Imersiva?
+                        <i class="fas fa-chevron-down group-open:rotate-180 transition"></i>
+                    </summary>
+                    <p class="p-4 pt-0 text-gray-400">É um modelo onde atuamos como consultores estratégicos, analisando dados para aumentar seu faturamento e não apenas gerar guias de impostos.</p>
+                </details>
+                <details class="group bg-gray-800 rounded-lg">
+                    <summary class="p-4 cursor-pointer font-semibold list-none flex justify-between items-center">
+                        A Assescor atende empresas de qual porte?
+                        <i class="fas fa-chevron-down group-open:rotate-180 transition"></i>
+                    </summary>
+                    <p class="p-4 pt-0 text-gray-400">Atendemos desde PME's em expansão até grandes empresas que buscam reestruturação tributária e planejamento de crescimento.</p>
+                </details>
+                <details class="group bg-gray-800 rounded-lg">
+                    <summary class="p-4 cursor-pointer font-semibold list-none flex justify-between items-center">
+                        Como funciona o projeto de faturamento?
+                        <i class="fas fa-chevron-down group-open:rotate-180 transition"></i>
+                    </summary>
+                    <p class="p-4 pt-0 text-gray-400">Analisamos seu histórico, mercado e margens para criar um roadmap financeiro com metas e indicadores de desempenho (KPIs).</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-gray-900 text-gray-400 border-t border-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <div class="text-2xl font-bold text-white mb-4">ASSESCOR</div>
+            <p class="mb-6">Especialistas em transformar contabilidade em ferramenta de lucro.</p>
+            <div class="flex justify-center space-x-6 mb-8 text-xl">
+                <a href="#" class="hover:text-brand-purple"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-brand-purple"><i class="fab fa-linkedin"></i></a>
+                <a href="https://wa.me/5521981705558" class="hover:text-brand-purple"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p class="text-sm">&copy; 2023 Assescor Contabilidade. Todos os direitos reservados. Rio de Janeiro - RJ.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

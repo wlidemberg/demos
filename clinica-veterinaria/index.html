@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetclin | Clínica Veterinária & Centro Cirúrgico 24 Horas</title>
+    <meta name="description" content="Atendimento veterinário 24h especializado em cães e gatos. Estrutura cirúrgica completa, exames e UTI com amor e segurança para o seu pet.">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            pink: '#E11D48',
+                            pinkLight: '#FFF1F2',
+                            pinkDark: '#BE123C',
+                            yellow: '#F59E0B',
+                            yellowLight: '#FEF3C7',
+                            yellowDark: '#D97706',
+                            dark: '#1E293B',
+                            light: '#F8FAFC'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        details summary::-webkit-details-marker { display: none; }
+    </style>
+</head>
+<body class="bg-brand-light text-slate-800 antialiased selection:bg-brand-yellowLight selection:text-brand-pinkDark">
+
+    <!-- Top Emergency Bar -->
+    <div class="bg-brand-yellow text-slate-900 font-bold text-xs sm:text-sm py-2 px-4 text-center tracking-wide flex items-center justify-center gap-2 shadow-sm">
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-brand-pink animate-ping"></span>
+        <span>PLANTÃO DE EMERGÊNCIA ATIVO 24 HORAS • EQUIPE CIRÚRGICA DE PRONTIDÃO</span>
+        <a href="https://wa.me/21968045339" class="underline ml-2 hover:text-white transition-colors">Fale Agora</a>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-rose-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-brand-pink to-brand-yellow flex items-center justify-center text-white shadow-md shadow-rose-200">
+                    <i class="fa-solid fa-shield-cat text-2xl"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-2xl font-black tracking-tight text-slate-900 leading-none">Vet<span class="text-brand-pink">clin</span></span>
+                    <span class="text-[10px] uppercase font-bold tracking-widest text-brand-yellowDark">Hospital Veterinário 24h</span>
+                </div>
+            </a>
+            <nav class="hidden md:flex items-center gap-8 font-medium text-slate-600">
+                <a href="#diferenciais" class="hover:text-brand-pink transition-colors">Por Que Nós</a>
+                <a href="#beneficios" class="hover:text-brand-pink transition-colors">Serviços & UTI</a>
+                <a href="#depoimentos" class="hover:text-brand-pink transition-colors">Depoimentos</a>
+                <a href="#faq" class="hover:text-brand-pink transition-colors">Dúvidas</a>
+            </nav>
+            <div class="flex items-center gap-3">
+                <a href="https://wa.me/21968045339" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-brand-pink to-rose-600 hover:from-rose-600 hover:to-brand-pink text-white font-semibold px-5 py-2.5 rounded-full shadow-lg shadow-rose-500/25 transition-all transform hover:-translate-y-0.5">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Chamar Plantão</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28 bg-gradient-to-b from-white via-rose-50/30 to-brand-light">
+        <div class="absolute -top-24 -left-24 w-96 h-96 bg-brand-yellowLight/50 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/2 -right-24 w-96 h-96 bg-brand-pinkLight/60 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-pinkLight border border-rose-200 text-brand-pinkDark font-semibold text-xs tracking-wider uppercase">
+                        <i class="fa-solid fa-heart-pulse"></i> Pronto-Socorro & Bloco Cirúrgico de Alta Complexidade
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.15] tracking-tight">
+                        Cuidado de excelência quando cada <span class="relative inline-block text-brand-pink">segundo conta<span class="absolute bottom-1.5 left-0 w-full h-3 bg-brand-yellow/30 -z-10 rounded"></span></span> para o seu pet.
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-slate-600 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Não espere o amanhecer para socorrer quem você ama. A <strong class="text-slate-900 font-semibold">Vetclin</strong> oferece acolhimento 24h, equipe especializada em cães e gatos e centro cirúrgico com tecnologia humana.
+                    </p>
+
+                    <!-- Trust indicators -->
+                    <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="https://wa.me/21968045339" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-brand-pink hover:bg-brand-pinkDark text-white font-bold text-lg px-8 py-4 rounded-2xl shadow-xl shadow-rose-600/30 hover:shadow-rose-600/50 transition-all transform hover:-translate-y-1">
+                            <i class="fa-brands fa-whatsapp text-2xl text-brand-yellow"></i>
+                            <span>Falar com Veterinário 24h</span>
+                        </a>
+                        <div class="flex items-center gap-2 text-slate-500 text-sm">
+                            <i class="fa-solid fa-clock text-brand-yellowDark text-lg"></i>
+                            <span>Atendimento imediato, sem agendamento</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 grid grid-cols-3 gap-4 border-t border-slate-200/80">
+                        <div class="text-center lg:text-left">
+                            <p class="text-2xl sm:text-3xl font-black text-slate-900">+12.000</p>
+                            <p class="text-xs text-slate-500 font-medium">Vidas Salvas</p>
+                        </div>
+                        <div class="text-center lg:text-left border-x border-slate-200 px-2">
+                            <p class="text-2xl sm:text-3xl font-black text-brand-pink">24/7</p>
+                            <p class="text-xs text-slate-500 font-medium">Médicos no Local</p>
+                        </div>
+                        <div class="text-center lg:text-left">
+                            <p class="text-2xl sm:text-3xl font-black text-slate-900">100%</p>
+                            <p class="text-xs text-slate-500 font-medium">Amor e Dedicação</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Background Glow Accent -->
+                        <div class="absolute inset-0 bg-gradient-to-tr from-brand-pink to-brand-yellow rounded-3xl transform rotate-3 scale-105 opacity-20"></div>
+                        
+                        <!-- Main Card/Image -->
+                        <div class="relative rounded-3xl overflow-hidden bg-white shadow-2xl border-4 border-white">
+                            <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1000&q=80" alt="Veterinária cuidando de um cachorro com carinho" class="w-full h-96 sm:h-[480px] object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                            
+                            <!-- Floating Badge 1 -->
+                            <div class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm p-3 rounded-2xl shadow-lg border border-rose-100 flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-brand-yellowLight text-brand-yellowDark flex items-center justify-center font-bold">
+                                    <i class="fa-solid fa-syringe text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-semibold text-slate-400 leading-tight">Cirurgia Segura</p>
+                                    <p class="text-sm font-bold text-slate-800">Anestesia Inalatória</p>
+                                </div>
+                            </div>
+
+                            <!-- Floating Badge 2 -->
+                            <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm p-4 rounded-2xl shadow-lg border border-slate-100 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <span class="flex h-3 w-3 relative">
+                                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                        <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                                    </span>
+                                    <div>
+                                        <p class="text-xs text-slate-500">Plantão Veterinário</p>
+                                        <p class="text-sm font-bold text-slate-800">Portas Abertas Agora</p>
+                                    </div>
+                                </div>
+                                <a href="https://wa.me/21968045339" class="bg-brand-yellow hover:bg-brand-yellowDark text-slate-900 font-bold text-xs uppercase px-3 py-2 rounded-xl transition">
+                                    Localizar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Pain vs Solution Section -->
+    <section id="diferenciais" class="py-20 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-pink font-bold text-sm tracking-wider uppercase">Fim da Angústia e Incerteza</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">
+                    Sabemos a dor de ver quem você ama sofrendo e não saber onde recorrer.
+                </h2>
+                <p class="text-slate-600 mt-4 text-base sm:text-lg">
+                    Em momentos críticos, a distância entre um susto e a recuperação do seu cão ou gato é uma clínica com suporte completo e imediato.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+                <!-- Bad Scenario -->
+                <div class="bg-rose-50/50 border-2 border-dashed border-rose-200 rounded-3xl p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="inline-flex items-center gap-2 text-rose-600 font-bold mb-6 text-lg">
+                            <i class="fa-solid fa-circle-xmark text-xl"></i> O pesadelo do tutor em emergências comuns:
+                        </div>
+                        <ul class="space-y-4 text-slate-700">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-xmark text-rose-500 mt-1"></i>
+                                <span>Clínicas de bairro fechadas durante a madrugada, feriados ou finais de semana.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-xmark text-rose-500 mt-1"></i>
+                                <span>Locais sem centro cirúrgico que exigem transferir seu pet em estado grave.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-xmark text-rose-500 mt-1"></i>
+                                <span>Atendimento frio, impessoal e falta de informação clara sobre o quadro clínico.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-xmark text-rose-500 mt-1"></i>
+                                <span>Demora para realização de exames básicos de imagem ou laboratoriais vitais.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-rose-200/60 text-xs text-rose-500 font-semibold">
+                        Nenhum tutor deveria passar por esse desespero sozinho.
+                    </div>
+                </div>
+
+                <!-- Vetclin Solution -->
+                <div class="bg-gradient-to-br from-white to-amber-50/40 border-2 border-brand-yellow rounded-3xl p-8 shadow-xl shadow-amber-500/10 flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute -right-8 -bottom-8 w-32 h-32 bg-brand-yellowLight rounded-full -z-0 opacity-40 pointer-events-none"></div>
+                    <div class="relative z-10">
+                        <div class="inline-flex items-center gap-2 text-brand-pink font-bold mb-6 text-lg">
+                            <i class="fa-solid fa-circle-check text-xl text-emerald-500"></i> Na Vetclin, a certeza do melhor cuidado:
+                        </div>
+                        <ul class="space-y-4 text-slate-800 font-medium">
+                            <li class="flex items-start gap-3">
+                                <div class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs mt-0.5 shrink-0"><i class="fa-solid fa-check"></i></div>
+                                <span><strong>Portas Abertas 24 Horas:</strong> Médico veterinário de prontidão física em tempo integral.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs mt-0.5 shrink-0"><i class="fa-solid fa-check"></i></div>
+                                <span><strong>Bloco Cirúrgico Próprio:</strong> Estrutura avançada com anestesia inalatória e monitor multiparamétrico.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs mt-0.5 shrink-0"><i class="fa-solid fa-check"></i></div>
+                                <span><strong>Medicina Humanizada & Afetiva:</strong> Tratamos seu pet com a ternura e paciência que ele merece.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs mt-0.5 shrink-0"><i class="fa-solid fa-check"></i></div>
+                                <span><strong>Diagnóstico Rápido:</strong> Exames no próprio local para decisões médicas certeiras e ágeis.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-amber-200 relative z-10">
+                        <a href="https://wa.me/21968045339" class="text-sm font-bold text-brand-pink hover:text-brand-pinkDark flex items-center gap-2">
+                            <span>Precisa de socorro imediato? Toque aqui para contato direto</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits / Pillars Section -->
+    <section id="beneficios" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="px-4 py-1.5 rounded-full bg-amber-100 text-brand-yellowDark font-bold text-xs uppercase tracking-wider">Estrutura de Ponta</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Por que a Vetclin é a escolha mais segura</h2>
+                <p class="text-slate-600 mt-3">Infraestrutura planejada para resolver desde vacinas preventivas até cirurgias delicadas.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Benefit 1 -->
+                <div class="bg-white p-7 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-pinkLight text-brand-pink flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-bell-concierge"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Pronto Atendimento 24h</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Emergências não avisam hora. Nosso time de veterinários e enfermeiros está acordado e pronto para agir de madrugada.
+                    </p>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="bg-white p-7 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-amber-100 text-brand-yellowDark flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-hand-holding-medical"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Cirurgias Especializadas</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        De procedimentos de tecidos moles a ortopedia e cesáreas. Bloco cirúrgico com controle rigoroso de assepsia.
+                    </p>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="bg-white p-7 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-pinkLight text-brand-pink flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-paw"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Cuidado Cão & Gato</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Ambientes e condutas separadas que reduzem drasticamente o estresse e a ansiedade do seu felino ou canino durante a consulta.
+                    </p>
+                </div>
+
+                <!-- Benefit 4 -->
+                <div class="bg-white p-7 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-amber-100 text-brand-yellowDark flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-bed-pulse"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Internação Monitorada</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Leitos climatizados com monitoramento de parâmetros vitais minuto a minuto e boletins atualizados com fotos para os tutores.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Central CTA -->
+            <div class="mt-12 text-center">
+                <a href="https://wa.me/21968045339" class="inline-flex items-center gap-3 bg-brand-yellow hover:bg-brand-yellowDark text-slate-900 font-extrabold px-8 py-4 rounded-full shadow-lg transition">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    <span>Tirar Dúvida com Nossa Recepção</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section id="depoimentos" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="flex items-center justify-center gap-1 text-brand-yellow text-sm mb-2">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <span class="ml-2 font-bold text-slate-700">4.9/5 estrelas no Google</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Histórias de amor e vidas salvas</h2>
+                <p class="text-slate-600 mt-2">A confiança de quem confiou o bem mais precioso à equipe Vetclin.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-rose-50/30 rounded-3xl p-8 border border-rose-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-brand-yellow text-xs mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-700 italic text-sm leading-relaxed mb-6">
+                            "Meu Golden retriever engoliu uma meia às 3h da manhã e começou a sufocar. Cheguei desesperada na Vetclin e em minutos a equipe já estava operando. Salvaram a vida do Bob! Gratidão eterna pelo acolhimento e profissionalismo."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-rose-200/50">
+                        <div class="w-12 h-12 rounded-full bg-brand-pink text-white flex items-center justify-center font-bold">
+                            CF
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">Camila Fontes</h4>
+                            <p class="text-xs text-slate-500">Tutora do Bob (Golden Retriever)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-amber-50/30 rounded-3xl p-8 border border-amber-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-brand-yellow text-xs mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-700 italic text-sm leading-relaxed mb-6">
+                            "Minha gatinha precisou de uma cesárea de emergência num domingo à noite. O centro cirúrgico é impecável e eles me mandavam notícias e vídeos o tempo todo. Todos os 4 filhotinhos nasceram saudáveis e a mãe se recuperou super bem."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-amber-200/50">
+                        <div class="w-12 h-12 rounded-full bg-brand-yellow text-slate-900 flex items-center justify-center font-bold">
+                            MA
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">Marcelo Andrade</h4>
+                            <p class="text-xs text-slate-500">Tutor da Luna (Persa)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-rose-50/30 rounded-3xl p-8 border border-rose-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-brand-yellow text-xs mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-700 italic text-sm leading-relaxed mb-6">
+                            "O carinho e a transparência médica fazem toda a diferença. Meu vira-lata teve intoxicação grave e ficou 3 dias internado. Foi tratado com o maior amor do mundo. O preço é justo e o serviço é nível de hospital humano."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-rose-200/50">
+                        <div class="w-12 h-12 rounded-full bg-brand-pinkDark text-white flex items-center justify-center font-bold">
+                            RT
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">Renata Toledo</h4>
+                            <p class="text-xs text-slate-500">Tutora do Pipoca (SRD)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-slate-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <span class="text-brand-pink font-bold text-sm uppercase tracking-wider">Tire Suas Dúvidas</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Perguntas Frequentes</h2>
+                <p class="text-slate-600 mt-2">Tudo o que você precisa saber sobre o atendimento na Vetclin.</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <details class="group bg-white rounded-2xl p-6 border border-slate-200 shadow-sm [&_summary::-webkit-details-marker]:none">
+                    <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 text-lg">
+                        <span>Preciso agendar horário para emergências 24h?</span>
+                        <span class="ml-4 transition duration-300 group-open:rotate-180 text-brand-pink">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </span>
+                    </summary>
+                    <p class="mt-4 text-slate-600 text-sm leading-relaxed">
+                        Não! Nosso pronto-socorro funciona por ordem de triagem e gravidade. Casos de urgência e emergência são atendidos de imediato a qualquer momento do dia ou da noite, 365 dias por ano. Se puder, nos envie uma mensagem no WhatsApp enquanto se desloca para prepararmos a equipe!
+                    </p>
+                </details>
+
+                <!-- FAQ 2 -->
+                <details class="group bg-white rounded-2xl p-6 border border-slate-200 shadow-sm [&_summary::-webkit-details-marker]:none">
+                    <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 text-lg">
+                        <span>Quais tipos de cirurgias são realizadas na Vetclin?</span>
+                        <span class="ml-4 transition duration-300 group-open:rotate-180 text-brand-pink">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </span>
+                    </summary>
+                    <p class="mt-4 text-slate-600 text-sm leading-relaxed">
+                        Realizamos procedimentos eletivos e de emergência: castrações preventivas, cesáreas de urgência, remoção de corpos estranhos gastrointestinais, cirurgias ortopédicas para fraturas, cirurgias oncológicas e oftálmicas. Todas com anestesia inalatória monitorada.
+                    </p>
+                </details>
+
+                <!-- FAQ 3 -->
+                <details class="group bg-white rounded-2xl p-6 border border-slate-200 shadow-sm [&_summary::-webkit-details-marker]:none">
+                    <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 text-lg">
+                        <span>Como acompanho meu pet se ele precisar ficar internado?</span>
+                        <span class="ml-4 transition duration-300 group-open:rotate-180 text-brand-pink">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </span>
+                    </summary>
+                    <p class="mt-4 text-slate-600 text-sm leading-relaxed">
+                        Temos horários diários de visitas presenciais para que você possa dar carinho ao seu bichinho. Além disso, nosso plantão envia boletins diários detalhados via WhatsApp, incluindo fotos e vídeos do estado de recuperação dele.
+                    </p>
+                </details>
+
+                <!-- FAQ 4 -->
+                <details class="group bg-white rounded-2xl p-6 border border-slate-200 shadow-sm [&_summary::-webkit-details-marker]:none">
+                    <summary class="flex items-center justify-between cursor-pointer font-bold text-slate-900 text-lg">
+                        <span>Quais as formas de pagamento aceitas?</span>
+                        <span class="ml-4 transition duration-300 group-open:rotate-180 text-brand-pink">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </span>
+                    </summary>
+                    <p class="mt-4 text-slate-600 text-sm leading-relaxed">
+                        Aceitamos Pix, dinheiro e cartões de crédito e débito, com possibilidade de parcelamento de procedimentos cirúrgicos e internações para que seu pet receba o atendimento essencial sem demora.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pre-Footer CTA Strip -->
+    <section class="bg-gradient-to-r from-brand-pink via-rose-600 to-brand-pinkDark text-white py-14">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">O seu pet precisa de ajuda neste momento?</h2>
+            <p class="text-rose-100 max-w-2xl mx-auto text-base sm:text-lg">
+                Nossos veterinários estão de prontidão na clínica agora mesmo. Não perca tempo e garanta a segurança dele.
+            </p>
+            <div class="pt-2">
+                <a href="https://wa.me/21968045339" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-brand-yellow hover:bg-yellow-400 text-slate-900 font-extrabold text-lg px-9 py-4 rounded-full shadow-2xl transition-all transform hover:scale-105">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    <span>Chamar no WhatsApp (21) 96804-5339</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Footer -->
+    <footer class="bg-slate-950 text-slate-300 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
+                
+                <!-- Col 1: Brand Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-pink to-brand-yellow flex items-center justify-center text-white">
+                            <i class="fa-solid fa-shield-cat text-lg"></i>
+                        </div>
+                        <span class="text-2xl font-black text-white">Vet<span class="text-brand-pink">clin</span></span>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Clínica Veterinária Especializada & Centro Cirúrgico 24 Horas para Cães e Gatos. Saúde, tecnologia e dedicação incondicional.
+                    </p>
+                    <div class="text-xs text-slate-500 font-mono">
+                        Resp. Técnico Veterinário CRMV-RJ
+                    </div>
+                </div>
+
+                <!-- Col 2: Services -->
+                <div class="space-y-3">
+                    <h3 class="text-white font-bold text-base">Especialidades</h3>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><a href="https://wa.me/21968045339" class="hover:text-brand-yellow transition">Pronto-Socorro 24 Horas</a></li>
+                        <li><a href="https://wa.me/21968045339" class="hover:text-brand-yellow transition">Cirurgias de Tecidos Moles</a></li>
+                        <li><a href="https://wa.me/21968045339" class="hover:text-brand-yellow transition">Cirurgias Ortopédicas</a></li>
+                        <li><a href="https://wa.me/21968045339" class="hover:text-brand-yellow transition">Internação e UTI Pet</a></li>
+                        <li><a href="https://wa.me/21968045339" class="hover:text-brand-yellow transition">Exames Laboratoriais e Raio-X</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Contact Details -->
+                <div class="space-y-3">
+                    <h3 class="text-white font-bold text-base">Plantão & Contato</h3>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-brands fa-whatsapp text-emerald-400 mt-1"></i>
+                            <div>
+                                <span class="block text-white font-semibold">(21) 96804-5339</span>
+                                <span class="text-xs text-slate-500">Atendimento 24h por mensagem e ligação</span>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-clock text-brand-yellow mt-0.5"></i>
+                            <span>Aberto 24 horas por dia, 7 dias por semana</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot text-brand-pink mt-0.5"></i>
+                            <span>Rio de Janeiro - RJ</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Rapid Action -->
+                <div class="space-y-4">
+                    <h3 class="text-white font-bold text-base">Chegando à Clínica</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Possuímos estacionamento rápido para desembarque de animais em estado de emergência e rampa de acessibilidade.
+                    </p>
+                    <a href="https://wa.me/21968045339" class="inline-block bg-slate-800 hover:bg-slate-700 text-brand-yellow text-xs font-bold py-2.5 px-4 rounded-xl border border-slate-700 transition w-full text-center">
+                        <i class="fa-solid fa-map-location-dot mr-1.5"></i> Como Chegar pelo Waze/Maps
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>&copy; 2024 Vetclin - Clínica Veterinária 24h. Todos os direitos reservados.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:underline">Termos de Uso</a>
+                    <span>•</span>
+                    <a href="#" class="hover:underline">Política de Privacidade</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/21968045339" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco no WhatsApp 24h" class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-16 h-16 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white shadow-2xl shadow-emerald-500/50 hover:scale-110 transition-all duration-300 group">
+        <span class="absolute -top-1 -right-1 flex h-4 w-4">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-yellow opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-4 w-4 bg-brand-yellow"></span>
+        </span>
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+        <!-- Tooltip on Hover for Desktop -->
+        <span class="absolute right-20 whitespace-nowrap bg-slate-900 text-white text-xs font-bold py-1.5 px-3 rounded-lg opacity-0 pointer-events-none group-hover:opacity-100 transition shadow-md hidden sm:block">
+            Plantão 24h Online!
+        </span>
+    </a>
+
+</body>
+</html>

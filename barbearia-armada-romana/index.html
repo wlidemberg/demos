@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia Armada Romana | Estética Masculina e Visagismo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#171717',
+                        primary: '#f25623',
+                        secondary: '#262626'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        details summary::-webkit-details-marker { display:none; }
+    </style>
+</head>
+<body class="bg-dark text-gray-100 overflow-x-hidden">
+
+    <!-- Botão Flutuante WhatsApp -->
+    <a href="https://wa.me/21968045339" class="fixed bottom-6 right-6 z-50 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg hover:scale-110 transition-transform" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Header -->
+    <header class="absolute top-0 left-0 w-full z-10 py-6 px-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-extrabold tracking-tighter text-primary">ARMADA<span class="text-white">ROMANA</span></div>
+            <a href="https://wa.me/21968045339" class="bg-primary hover:bg-orange-700 text-white px-6 py-2 rounded font-bold transition">AGENDAR AGORA</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center pt-20 bg-[url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center">
+        <div class="absolute inset-0 bg-black/80"></div>
+        <div class="relative max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <span class="text-primary font-bold tracking-widest uppercase text-sm">Corte Clássico & Visagismo</span>
+                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight">Domine sua <span class="text-primary">imagem</span> com precisão.</h1>
+                <p class="text-lg text-gray-300 max-w-md">Cansado de atrasos e cortes que não combinam com você? Experimente o alinhamento de barba e cabelo com técnica de visagismo e terapia de toalha quente.</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://wa.me/21968045339" class="bg-primary hover:bg-orange-700 text-white px-8 py-4 rounded-md font-extrabold text-center transition-all flex items-center justify-center gap-2">
+                        <i class="fab fa-whatsapp"></i> GARANTIR MEU HORÁRIO
+                    </a>
+                </div>
+                <p class="text-sm text-gray-400 italic"><i class="fas fa-clock text-primary mr-2"></i> Atendimento pontual sem filas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dores vs Solução -->
+    <section class="py-20 px-4 bg-secondary">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Por que escolher a Armada Romana?</h2>
+                <div class="h-1 w-20 bg-primary mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-dark p-8 rounded-xl border-l-4 border-red-500">
+                    <h3 class="text-xl font-bold mb-4 text-red-500">O problema das barbearias comuns:</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><i class="fas fa-times mr-2"></i> Filas intermináveis e atrasos constantes.</li>
+                        <li><i class="fas fa-times mr-2"></i> Cortes genéricos que não valorizam seu rosto.</li>
+                        <li><i class="fas fa-times mr-2"></i> Pele irritada e foliculite pós-barba.</li>
+                        <li><i class="fas fa-times mr-2"></i> Falta de produtos de qualidade profissional.</li>
+                    </ul>
+                </div>
+                <div class="bg-dark p-8 rounded-xl border-l-4 border-primary">
+                    <h3 class="text-xl font-bold mb-4 text-primary">A Experiência Armada Romana:</h3>
+                    <ul class="space-y-3 text-gray-200 font-medium">
+                        <li><i class="fas fa-check mr-2 text-primary"></i> Agendamento digital e pontualidade britânica.</li>
+                        <li><i class="fas fa-check mr-2 text-primary"></i> Visagismo: O corte ideal para o seu formato de rosto.</li>
+                        <li><i class="fas fa-check mr-2 text-primary"></i> Terapia de toalha quente para zero irritação.</li>
+                        <li><i class="fas fa-check mr-2 text-primary"></i> Produtos premium e ambiente exclusivo para relaxar.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefícios -->
+    <section class="py-20 px-4 bg-dark">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12">
+            <div class="text-center group">
+                <div class="w-20 h-20 bg-secondary flex items-center justify-center rounded-full mx-auto mb-6 group-hover:bg-primary transition-colors">
+                    <i class="fas fa-user-tie text-3xl text-primary group-hover:text-white"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-3">Barbeiros Especialistas</h4>
+                <p class="text-gray-400">Profissionais treinados em estética facial masculina e visagismo avançado.</p>
+            </div>
+            <div class="text-center group">
+                <div class="w-20 h-20 bg-secondary flex items-center justify-center rounded-full mx-auto mb-6 group-hover:bg-primary transition-colors">
+                    <i class="fas fa-beer-mug-empty text-3xl text-primary group-hover:text-white"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-3">Ambiente Premium</h4>
+                <p class="text-gray-400">Café cortesia, cerveja artesanal e espaço climatizado para o seu descanso.</p>
+            </div>
+            <div class="text-center group">
+                <div class="w-20 h-20 bg-secondary flex items-center justify-center rounded-full mx-auto mb-6 group-hover:bg-primary transition-colors">
+                    <i class="fas fa-calendar-check text-3xl text-primary group-hover:text-white"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-3">Zero Espera</h4>
+                <p class="text-gray-400">Sistema de agendamento online rápido. Chegou, sentou, transformou.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prova Social -->
+    <section class="py-20 px-4 bg-secondary">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 italic">"O que dizem nossos guerreiros"</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-dark p-6 rounded-lg shadow-xl">
+                    <div class="flex text-primary mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-gray-300 italic mb-4">"Finalmente achei um barbeiro que entende de visagismo. O corte mudou meu visual e minha autoconfiança."</p>
+                    <p class="font-bold text-primary">— Ricardo Silva</p>
+                </div>
+                <div class="bg-dark p-6 rounded-lg shadow-xl">
+                    <div class="flex text-primary mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-gray-300 italic mb-4">"A terapia de toalha quente é sensacional. Minha pele nunca mais ficou irritada após fazer a barba."</p>
+                    <p class="font-bold text-primary">— Marcos Oliveira</p>
+                </div>
+                <div class="bg-dark p-6 rounded-lg shadow-xl">
+                    <div class="flex text-primary mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-gray-300 italic mb-4">"Pontualidade nota 10. Consigo marcar na minha hora de almoço e nunca tive atrasos. Recomendo!"</p>
+                    <p class="font-bold text-primary">— André Santos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 px-4 bg-dark">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 uppercase tracking-widest">Dúvidas Frequentes</h2>
+            <div class="space-y-4">
+                <details class="group bg-secondary rounded-lg overflow-hidden border border-gray-800">
+                    <summary class="p-4 cursor-pointer font-bold flex justify-between items-center list-none">
+                        O que é a técnica de visagismo?
+                        <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <div class="p-4 text-gray-400 border-t border-gray-800">
+                        É a análise do seu formato de rosto e traços faciais para criar um corte de cabelo e barba que harmonize perfeitamente com sua imagem.
+                    </div>
+                </details>
+                <details class="group bg-secondary rounded-lg overflow-hidden border border-gray-800">
+                    <summary class="p-4 cursor-pointer font-bold flex justify-between items-center list-none">
+                        Como funciona o agendamento?
+                        <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <div class="p-4 text-gray-400 border-t border-gray-800">
+                        Basta clicar em qualquer botão desta página para ser direcionado ao nosso WhatsApp ou sistema de reservas. Escolha o dia e hora e pronto!
+                    </div>
+                </details>
+                <details class="group bg-secondary rounded-lg overflow-hidden border border-gray-800">
+                    <summary class="p-4 cursor-pointer font-bold flex justify-between items-center list-none">
+                        Tenho pele sensível, posso fazer a barba?
+                        <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <div class="p-4 text-gray-400 border-t border-gray-800">
+                        Com certeza! Nossa terapia de toalha quente e o uso de produtos premium pré e pós-barba são específicos para evitar irritações e foliculite.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 px-4 border-t border-primary/20 text-center">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-3xl font-extrabold tracking-tighter text-primary mb-6">ARMADA<span class="text-white">ROMANA</span></div>
+            <p class="text-gray-500 mb-8 max-w-md mx-auto">Onde a tradição encontra a modernidade para o homem que não aceita nada menos que a perfeição.</p>
+            <div class="flex justify-center gap-6 mb-8 text-2xl">
+                <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-facebook"></i></a>
+                <a href="https://wa.me/21968045339" class="text-gray-400 hover:text-primary"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p class="text-xs text-gray-600">&copy; 2023 Barbearia Armada Romana. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
